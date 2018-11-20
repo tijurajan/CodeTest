@@ -5,6 +5,7 @@
     {
         private Children _collection;
         private int _current = 0;
+        private int _next = 0;
         private int _step = 1;
         private int _count= 0;        
 
@@ -20,6 +21,7 @@
         public Child First()
         {
             _current = _step-1;
+            _current = Rotate(_collection, _current);
             return _collection[_current] as Child;
         }
 
@@ -27,10 +29,14 @@
 
         public Child Next()
         {
-            _current += _step;
-            _count += 1;
-            _current = (_current >= _collection.Count) ? (_current - _collection.Count) : _current;  // rotation: clockwise
-            
+            _current = _collection.IndexOf(CurrentChild);
+            _collection.RemoveOut(CurrentChild);
+
+            _current = _current + _step - 1;
+            _current = Rotate(_collection, _current);  // rotation: clockwise
+
+
+
             if (!IsDone)
                 return _collection[_current] as Child;
             else
@@ -50,14 +56,24 @@
 
         public Child CurrentChild
         {
-            get { return _collection[_current] as Child; }
+            get {
+                _current = Rotate(_collection, _current);
+                return _collection[_current] as Child; }
         }
 
         // Gets whether iteration is complete
 
         public bool IsDone
         {
-            get { return _count >= _collection.Count - 1; }
+            get { return _collection.Count ==1; }
+        }
+        private int Rotate (Children list, int current)
+        {
+            do
+            {
+                current = (current >= list.Count) ? (current - list.Count) : current;
+            } while (current >= list.Count);
+            return current;
         }
     }
 }

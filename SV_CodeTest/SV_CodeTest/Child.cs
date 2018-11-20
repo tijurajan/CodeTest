@@ -7,10 +7,10 @@
 
         // Constructor
 
-        public Child(int id, bool inGame = true)
+        public Child(int id)
         {
             this._id = id;
-            this._ingame = inGame;
+          
         }
 
         // Gets name
@@ -19,11 +19,7 @@
         {
             get { return _id; }
         }
-        public bool InGame
-        {
-            get { return _ingame; }
-            set { _ingame = value; }
-        }
+       
 
     }
 }

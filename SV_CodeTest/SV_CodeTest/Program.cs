@@ -14,6 +14,7 @@ namespace SV_CodeTest
             int n = 10;
             int k = 3;
             Children collection = new Children();
+            Children outList = new Children();
             for (int i = 1; i <= n; i++)
             {
                 collection[i] = new Child(i);
@@ -28,9 +29,9 @@ namespace SV_CodeTest
             for (Child item = iterator.First();
                 !iterator.IsDone; item = iterator.Next())
             {
-                item.InGame = false;
+                outList.Add(item);
             }
-       
+            Child winner = collection.winner();
 
             // Wait for user
 

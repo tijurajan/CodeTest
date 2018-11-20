@@ -29,6 +29,24 @@ namespace SV_CodeTest
             get { return _items.Count; }
         }
 
+        public ArrayList RemoveOut(Child child)
+        {
+            _items.Remove(child);
+            return _items;
+        }
+        public int IndexOf(Child child)
+        {
+            return _items.IndexOf(child);
+        }
+        public Child winner()
+        {
+            return (Child)_items[0];
+        }
+        public int Add(Child child)
+        {
+            return _items.Add(child);
+        }
+
         // Indexer
 
         public object this[int index]
