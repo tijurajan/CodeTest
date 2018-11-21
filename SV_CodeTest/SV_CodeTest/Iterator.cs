@@ -5,9 +5,7 @@
     {
         private Children _collection;
         private int _current = 0;
-        private int _next = 0;
-        private int _step = 1;
-        private int _count= 0;        
+        private int _step = 1;    
 
         // Constructor
 

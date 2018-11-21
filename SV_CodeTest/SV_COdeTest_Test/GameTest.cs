@@ -26,7 +26,7 @@ namespace SV_COdeTest_Test
         {
 
             var result = Program.Game(10, 3);
-            Assert.IsTrue(result.Winner.ID ==4);
+            Assert.IsTrue(result.Winner ==4);
         }
         [TestMethod]
         public void Check_If_Number_Of_Children_Out_Is_One_Less_Than_Count()
