@@ -1,6 +1,6 @@
 ﻿namespace SV_CodeTest
 {
-    internal class Iterator : IAbstractIterator
+    public class Iterator : IAbstractIterator
 
     {
         private Children _collection;

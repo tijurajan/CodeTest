@@ -12,7 +12,7 @@ namespace SV_CodeTest
     /// The 'ConcreteAggregate' class
 
     /// </summary>
-    class Children : IAbstractCollection
+    public class Children : IAbstractCollection
 
     {
         private ArrayList _items = new ArrayList();
@@ -46,9 +46,12 @@ namespace SV_CodeTest
         {
             return _items.Add(child);
         }
+        public Child GetChild(int idx)
+        {
+           return (Child)_items[idx];
+        }
 
         // Indexer
-
         public object this[int index]
         {
             get { return _items[index]; }

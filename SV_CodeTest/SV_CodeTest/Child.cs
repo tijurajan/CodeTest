@@ -2,11 +2,8 @@
 {
     public class Child
     {
-        private int _id;
-        private bool _ingame;
-
+        private int _id;     
         // Constructor
-
         public Child(int id)
         {
             this._id = id;
